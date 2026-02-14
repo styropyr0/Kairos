@@ -1,0 +1,3 @@
+package com.styropyr0.kairos
+
+class UnprivilegedActionByKairos: Exception(Constant.KAIROS_UNPRIVILEGED_ACCESS)
