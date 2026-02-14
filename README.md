@@ -6,6 +6,8 @@ Kairos is designed for systems that must execute at a specific moment without re
 
 ---
 
+[![](https://jitpack.io/v/styropyr0/Kairos.svg)](https://jitpack.io/#styropyr0/Kairos)
+
 ## Overview
 
 Kairos provides:
