@@ -27,6 +27,47 @@ It is intended for precise, single-moment execution scenarios such as:
 
 ---
 
+## Installation
+
+To include the **Kairos** in your project, follow the instructions below.
+
+```gradle
+dependencies {
+    implementation 'com.github.styropyr0:Kairos:1.0.0'
+}
+```
+or for `app:build.gradle.kts`
+
+```kotlin
+dependencies {
+    implementation("com.github.styropyr0:Kairos:1.0.0")
+}
+```
+
+Add the following to your `settings.gradle`:
+
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+or for `settings.gradle.kts`
+
+```kotlin
+dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url = uri("https://jitpack.io") }
+		}
+	}
+```
+---
+
 ## Requirements
 
 At least one of the following must be granted:
