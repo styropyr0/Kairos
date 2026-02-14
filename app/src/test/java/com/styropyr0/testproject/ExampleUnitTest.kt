@@ -1,4 +1,4 @@
-package com.styropyr0.kairos
+package com.styropyr0.testproject
 
 import org.junit.Test
 

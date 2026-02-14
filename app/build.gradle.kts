@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.styropyr0.kairos"
+    namespace = "com.styropyr0.testproject"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.styropyr0.kairos"
+        applicationId = "com.styropyr0.testproject"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -39,6 +39,9 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(project(":kairos"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
