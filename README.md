@@ -143,6 +143,9 @@ class SampleReceiver : KairosReceiver() {
     }
 }
 ```
+See an example implementation in the `app` module:
+
+https://github.com/styropyr0/Kairos/blob/main/app/src/main/java/com/styropyr0/testproject/SampleEventScheduler.kt
 
 ---
 
