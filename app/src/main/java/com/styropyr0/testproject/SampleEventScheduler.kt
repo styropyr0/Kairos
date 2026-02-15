@@ -154,12 +154,16 @@ class SampleBroadcastReceiver : KairosReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         val uniqueId = intent?.getStringExtra("UNIQUE_ID")
         val slotId = intent?.getStringExtra("SLOT_ID")
-        val sharedPreferences: SharedPreferences =
-            context?.getSharedPreferences("testProject", MODE_PRIVATE) ?: return
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
-        Log.d("SampleEventScheduler", "Event $uniqueId has been fired.")
+        // Must be called to remove the event from cache as it's already fired
+        // Otherwise, it will exist in cache. Only defragmentation will clear it.
+        SampleEventScheduler(context!!).remove(uniqueId!!, slotId!!)
 
-        editor.putBoolean("isScheduled", false).apply()
+        // What you want to do
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("testProject", MODE_PRIVATE) ?: return
+        sharedPreferences.edit {
+            Log.d("SampleEventScheduler", "Event $uniqueId has been fired.")
+            putBoolean("isScheduled", false)
+        }
     }
 }
