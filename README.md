@@ -298,8 +298,13 @@ data class OrderTimeoutEvent(
 ```kotlin
 class OrderTimeoutReceiver : KairosReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        val orderId = intent?.getStringExtra("UNIQUE_ID") ?: return
-
+        val uniqueId = intent?.getStringExtra("UNIQUE_ID") ?: return
+        val slotId = intent?.getStringExtra("SLOT_ID") ?: return
+        
+        // Remove the event from cache since it has already fired
+        // Otherwise, it will exist in cache. Only defragmentation will clear it.
+        OrderTimeoutScheduler(context).cancel(uniqueId)
+        
         // Perform domain-specific logic here
     }
 }
