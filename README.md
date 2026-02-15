@@ -155,10 +155,7 @@ val calendar = Calendar.getInstance().apply {
 
 val event = SampleEvent(
     id = "123",
-    timeSlot = KairosTimeSlot(
-        startTime = calendar,
-        endTime = calendar
-    )
+    timeSlot = KairosTimeSlot(calendar)
 )
 
 Kairos.createMilestoneEvent(
